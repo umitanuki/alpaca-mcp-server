@@ -118,7 +118,7 @@ async def get_stock_bars(symbol: str, days: int = 5) -> str:
         
         bars = stock_client.get_stock_bars(request_params)
         
-        if symbol in bars and bars[symbol]:
+        if bars[symbol]:
             result = f"Historical Data for {symbol} (Last {days} trading days):\n"
             result += "---------------------------------------------------\n"
             
